@@ -12,7 +12,7 @@ h4,
 p,
 button,
 label,
-input {
+input[type="text"] {
     font-family: Arial;
 }
 
