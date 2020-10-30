@@ -1,0 +1,178 @@
+@mixin vertical-flexbox {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    @include vertical-flexbox;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+}
+
+a,
+h3,
+h4,
+p,
+button,
+label,
+input[type="text"] {
+    font-family: Arial;
+}
+
+h3 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: solid black;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+.blue-background {
+    background-color: rgb(255, 230, 254);
+
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#front-page-image {
+    width: auto;
+    height: 600px;
+    border-radius: 10px;
+}
+
+#front-page-content {
+    @include vertical-flexbox;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#company-page {
+    display: flex;
+    margin: 30px;
+    align-items: center;
+}
+
+#cat-baking {
+    max-width: 40%;
+}
+
+#company-about {
+    display: flex;
+    align-content: center;
+    padding: 5%;
+}
+
+#contact-page {
+    text-align: center;
+}
+
+#contact-form {
+    @include vertical-flexbox;
+    justify-content: center;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+button {
+    margin-top: 30px;
+    height: 50px;
+    width: 100px;
+    background-color: pink;
+    border: none;
+}
+
+button:hover {
+    background-color: salmon;
+}
+
+label {
+    font-weight: bold;
+    margin: 5px;
+}
+
+@media screen and (max-width: 479px) {
+    .nav-bar {
+        flex-direction: column-reverse;
+    }
+
+    #products-content {
+        flex-direction: column;
+    }
+
+    #company-page {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #cat-baking {
+        justify-content: center;
+        align-content: center;
+        max-width: 80%;
+    }
+
+    #contact-form {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 479px) {
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .products-tile {
+        flex: 49%;
+    }
+
+}
+
+@media screen and (max-width: 2000px) and (min-width: 767px) {
+    .products-tile {
+        flex: 33%;
+    }
+}
+
+.product-image {
+    width: 350px;
+    height: auto;
+}
+
+#products-content {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.products-tile {
+    @include vertical-flexbox;
+    align-items: center;
+}
+
+footer {
+    text-align: right;
+    margin-right: 20px;
+    font-size: 10px;
+}
